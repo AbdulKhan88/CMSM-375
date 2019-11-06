@@ -1,0 +1,18 @@
+<table border="1">
+  <thead></thead>
+  <tr>
+    <th>ID</th>
+    <th>Type</th>
+  </tr>
+
+  <tbody>
+  <tr *ngFor="let screw of screwList">
+    <td>{{screw.id}}</td>
+    <td>{{screw.content}}</td>
+    <td><input type ="button" value="Delete"></td>
+  </tr>
+  </tbody>
+
+</table>
+<br>
+<input type ="button" (click)="rtToAddScrew()" value="Add Screw">

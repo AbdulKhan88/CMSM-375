@@ -1,0 +1,4 @@
+<div [formGroup]="screwForm">
+  Content: <input formControlName="content"><br>
+  <input type="button" (click)="onSubmit(screwForm.value)" value="Add Screw">
+</div>
