@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<body>
+    <div class="homepageBox">
+        <div class="homepageText">
+            <p>Screw You</p>
+            <div class="slideshow">
+                    <owl-carousel [options]="mySlideOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
+                        <div class="item" *ngFor="let image of mySlideImages;let i = index">
+                            <div>
+                                <img src={{image}}/>
+                            </div>
+                        </div>
+                    </owl-carousel>
+                
+                </div> 
+        </div>
+    </div>
+</body>
+<app-footer></app-footer>
+

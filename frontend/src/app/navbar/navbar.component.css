@@ -1,17 +1,39 @@
 .mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(245, 245, 220, 0.88);
+    opacity: .99;
+  }
 
-.HomeButton {
-  position: sticky;
-  top: 0;
-  left: 0;
-}
+  
+  .HomeButton {
+    border: 1px dashed rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: wheat;
+    color: black;
+    padding: 2px 6px;
+    font-size: 16px;
+    cursor: pointer;
+    position: sticky;
+  }
 
-.LoginButton {
-  position: -webkit-sticky;
-  top: 0;
-  right: 0;
-}
+  .ProductsButton {
+    border: 1px dashed rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: wheat;
+    color: black;
+    padding: 2px 6px;
+    font-size: 20px;
+    cursor: pointer;
+    position: sticky;
+    margin: 01%;
+  }
+  
+  .LoginButton {
+    position: sticky;
+    top: 0;
+    right: 0;
+    margin: 01%;
+  }

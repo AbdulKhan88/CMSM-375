@@ -13,12 +13,14 @@ import {ScrewCardComponent} from "./screw-list/screw-card.component";
 import {FlexLayoutModule } from '@angular/flex-layout';
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
-import {HomeComponent} from "./home/home.component";
+import {HomepageComponent} from "./homepage/homepage.component";
 import {NavbarComponent} from "./navbar/navbar.component";
 import {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { OwlModule } from 'ngx-owl-carousel';
+import { FooterComponent } from "./footer/footer.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 @NgModule({
@@ -29,8 +31,9 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
     ScrewCardComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
+    HomepageComponent,
     NavbarComponent,
+    FooterComponent,
     PageNotFoundComponent
   ],
   imports: [
@@ -46,7 +49,8 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+    OwlModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
