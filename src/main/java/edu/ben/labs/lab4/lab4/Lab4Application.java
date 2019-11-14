@@ -17,7 +17,7 @@ import java.util.List;
 
 @SpringBootApplication
 public class Lab4Application {
-    
+
     private final String URL = "jdbc:mysql://localhost:3306/lab4";
     private final String USER = "root";
     private final String PASS = "root";

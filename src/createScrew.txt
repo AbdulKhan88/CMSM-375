@@ -1,0 +1,7 @@
+accessID, Name, HeadType, Gauge, ThreadPerInch, ShaftLength, Price, Category [header line]
+0,Deck Mate,Star Flatten-Head,#9,0,2 1/2,.30,Wood Deck Screw
+1,Grip-Rite,Philip Flatten-Head,#6,10,1 1/4,.40,General
+2,Backer-On,Star Flatten-Head,#9,15,1 1/4,.10,Outdoors Screw
+3,Backer-On,Star Flatten-Head,#4,12,1 1/2,.12,Outdoors Screw
+4,Backer-On,Star Flatten-Head,#4,12,1 1/2,.12,Outdoors Screw
+5,Backer-On,Star Flatten-Head,#4,12,1 1/2,.12,Outdoors Screw
