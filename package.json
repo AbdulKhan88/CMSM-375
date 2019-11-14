@@ -1,0 +1,15 @@
+{
+  "name": "cs375f19final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://cs.ben.edu/bitbucket/scm/csjaas/cs375f19final.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

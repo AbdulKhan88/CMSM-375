@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<br>
+<div class="container">
+
+  <div class = "pageLayout">
+  <h1>Register</h1>
+  <br>
+  <br>
+  <!-- call our form register -->
+  <form [formGroup]="registerForm">
+
+    <!--form part for first name -->
+    <div class="form-group">
+      <mat-form-field floatLabel = "never"  class="example-full-width" hideRequiredMarker>
+        <label>
+          <input matInput type="text" formControlName="firstName" placeholder="first name" required>
+        </label>
+      </mat-form-field>
+    </div>
+
+    <!--form part for last name-->
+    <div class="form-group">
+      <mat-form-field floatLabel = "never"  class="example-full-width" hideRequiredMarker>
+        <label>
+          <input matInput type="text" formControlName="lastName" placeholder="last name" required>
+        </label>
+      </mat-form-field>
+    </div>
+
+    <!--form part for user name-->
+    <div class="form-group">
+      <mat-form-field floatLabel = "never"  class="example-full-width" hideRequiredMarker>
+        <label>
+          <input matInput type="text" formControlName="userName" placeholder="user name" required>
+        </label>
+      </mat-form-field>
+    </div>
+
+
+    <!--form part for email-->
+    <div class="form-group">
+      <mat-form-field floatLabel = "never"  class="example-full-width" hideRequiredMarker>
+        <label>
+          <input matInput type="email" formControlName="email" placeholder="email" required>
+        </label>
+      </mat-form-field>
+    </div>
+
+    <!--form part for password-->
+    <div class="form-group">
+      <mat-form-field floatLabel = "never" class="example-full-width" hideRequiredMarker>
+        <label>
+        <input matInput type="password" formControlName="password" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+        </label>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"> <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <!-- buttons to route to home or register user-->
+    <button mat-raised-button type="submit">Register</button>
+    <div class="divider"></div>
+    <button mat-raised-button type = "cancel" routerLink="/home">Cancel</button>
+    </form>
+    <br>
+  </div>
+</div>

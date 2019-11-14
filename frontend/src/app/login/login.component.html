@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<br>
+<div class="container">
+
+  <div class = "pageLayout">
+    <h1>Login</h1>
+    <br>
+    <br>
+    <!-- call our form register -->
+    <form [formGroup]="loginForm">
+
+      <!--form part for email-->
+      <div class="form-group">
+        <mat-form-field floatLabel = "never"  class="example-full-width" hideRequiredMarker>
+          <label>
+            <input matInput type="email" formControlName="email" placeholder="email" required>
+          </label>
+        </mat-form-field>
+      </div>
+
+      <!--form part for password-->
+      <div class="form-group">
+        <mat-form-field floatLabel = "never" class="example-full-width" hideRequiredMarker>
+          <label>
+            <input matInput type="password" formControlName="password" placeholder="Enter your password">
+          </label>
+        </mat-form-field>
+      </div>
+
+      <!-- buttons to route to home or register user-->
+      <button mat-raised-button type="submit">Register</button>
+      <div class="divider"></div>
+      <button mat-raised-button type = "cancel" routerLink="/home">Cancel</button>
+    </form>
+    <br>
+    <!-- this will log the error message to the user based on their input-->
+    <label class="error">{{errorMessage}}</label>
+  </div>
+</div>

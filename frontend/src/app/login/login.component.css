@@ -1,0 +1,21 @@
+.pageLayout {
+  text-align: center;
+}
+
+.example-full-width {
+  width: 30%;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.divider{
+  width:10px;
+  height:auto;
+  display:inline-block;
+}
+
+.error {
+  color: red;
+}
