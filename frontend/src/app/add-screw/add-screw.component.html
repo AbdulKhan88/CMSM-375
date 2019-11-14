@@ -1,4 +1,7 @@
-<div [formGroup]="screwForm">
-  Content: <input formControlName="content"><br>
-  <input type="button" (click)="onSubmit(screwForm.value)" value="Add Screw">
-</div>
+<form [formGroup]="screwForm" (ngSubmit)="onSubmit(screwForm.value)">
+  <div>
+    Name: <input formControlName="name"><br>
+  </div>
+  <button class="button" (click)="onSubmit(screwForm.value)" value="Add Screw">Add Screw</button>
+</form>
+

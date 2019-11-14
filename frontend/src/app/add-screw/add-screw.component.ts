@@ -21,7 +21,7 @@ export class AddScrewComponent implements OnInit {
 
   createForm() {
     this.screwForm = this.fb.group({
-      content: ['']
+      name: ['']
     });
   }
 
