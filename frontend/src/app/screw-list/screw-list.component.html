@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="mcontainer">
   <div class="box2"><span>SearchBox</span></div>
   <div class="container" fxLayout="row wrap">
@@ -5,18 +6,16 @@
       <mat-card>
 
         <mat-card-header class="card-header">{{screw.name}}</mat-card-header>
-        <img src="assets/ScrewImg/{{screw.name}} {{screw.accessId}}.jpg" width="200" height="100">
-        <mat-card-content>
-
+        <img src="{{screw.imgPath}}" width="200" height="100">
+        <mat-card-content class = "card-content">
           {{screw.category}}
-          {{screw.gauge}}
           {{screw.headType}}
-
+          <P>{{screw.gauge}} X {{screw.threadsPerInch}}  ({{screw.shaftLen}} in.)</P>
         </mat-card-content>
 
         <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
-          <button mat-raised-button>Button1</button>
-          <button mat-raised-button>Button2</button>
+          <button color = "primary" mat-raised-button>Find out More</button>
+          <button color = "primary" mat-raised-button>Add to Cart</button>
         </mat-card-actions>
       </mat-card>
     </div>

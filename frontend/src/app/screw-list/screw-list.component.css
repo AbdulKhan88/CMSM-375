@@ -23,38 +23,39 @@
   margin-left: auto;
   display: flex;
   padding: 6px 0;
-  background-color: beige;
+  background-color: lightskyblue;
   border: 1px solid #ccc;
   width: 88%;
 }
 .box2{
   height: 600px;
   width: 200px;
-  background-color: darkgrey;
   border: 1px solid #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2em;
+  background-color: aliceblue;
   margin-right: auto;
 }
 .box {
   height: 32%;
   width: 220px;
-  background-color: whitesmoke;
-  border: 1px solid #ccc;
+  background-color: floralwhite;
+  border: 10px solid darkblue;
   display: flex;
   align-items: center;
   font-size: 1.2em;
-
+}
+.card-content {
 
 }
 .card-item {
-  padding: 5px 5px 5px 5px;
-  justify-content: flex-start;
+  padding: 4px 5px 5px 5px;
+  justify-content: center;
 }
 .card-header {
-  font-size: larger;
+  font-size: x-large;
 }
 .card-search {
   width: 200px;
