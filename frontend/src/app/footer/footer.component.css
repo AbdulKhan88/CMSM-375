@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+
+
+.footer {
+    background-color: rgba(245, 245, 220, 0.586);
+    height:24px;
+    width: 100%; 
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+  }
+  
+  .level-item {
+      color: rgb(34, 34, 34,0.8);
+      margin: auto;
+      text-align: center;
+      font-style: oblique;
+  }
+  

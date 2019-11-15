@@ -1,0 +1,37 @@
+body {
+    background-image: url("../../assets/img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: 0%;
+    display: flex;
+    background-position-y: 0%;
+  }
+  .homepageBox {
+      width: 400px;
+      height: 100px;
+      background: rgba(0, 0, 0, .5);
+      margin: auto;
+      margin-top: 20px;
+  }
+  .homepageText {
+      text-align: center;
+      color: black;
+      font-size: 50px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-shadow:2px 2px 5px darkgrey;
+  }
+  .slideshow {
+      margin-top: 50px;
+      padding: 30px 30px;
+      border: 1px dashed rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.445);
+    color: black;
+    padding: 2px 6px;
+
+  }
+  .slideshow-item{
+      contain: size;
+  }
+  
