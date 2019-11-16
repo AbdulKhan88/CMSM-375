@@ -1,5 +1,5 @@
 import {Screw} from "../shared/screw";
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 
 @Component({
   selector: 'app-screw-card',
@@ -7,10 +7,8 @@ import {Component} from "@angular/core";
   styleUrls: ['./screw-card.component.css']
 })
 export class ScrewCardComponent {
-  Screw:Screw;
-  cardShortDescription: "tester tester"
-  cardTitle: "test"
-  cardImagePath = "";
+
+  @Input() cardScrew:Screw;
 
   constructor() {
 

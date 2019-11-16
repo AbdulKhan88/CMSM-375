@@ -1,0 +1,77 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$md-mcgpalette0primary: (
+  50 : #fefefb,
+  100 : #fcfcf5,
+  200 : #fafaee,
+  300 : #f8f8e7,
+  400 : #f7f7e1,
+  500 : #f5f5dc,
+  600 : #f4f4d8,
+  700 : #f2f2d3,
+  800 : #f0f0ce,
+  900 : #eeeec5,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffffff,
+  A700 : #ffffff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$md-mcgpalette1accent: (
+  50 : #fefbf6,
+  100 : #fcf5e8,
+  200 : #faefd9,
+  300 : #f8e8ca,
+  400 : #f7e3be,
+  500 : #f5deb3,
+  600 : #f4daac,
+  700 : #f2d5a3,
+  800 : #f0d19a,
+  900 : #eec88b,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffffff,
+  A700 : #ffffff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+
+$custom-theme-primary: mat-palette($md-mcgpalette0primary);
+$custom-theme-accent: mat-palette($md-mcgpalette1accent);
+$custom-theme-warn: mat-palette($mat-red);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@include angular-material-theme($custom-theme);

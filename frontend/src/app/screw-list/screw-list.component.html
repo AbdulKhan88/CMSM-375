@@ -1,23 +1,14 @@
 <app-navbar></app-navbar>
-<div class="mcontainer">
-  <div class="box2"><span>SearchBox</span></div>
-  <div class="container" fxLayout="row wrap">
-    <div *ngFor="let screw of screwList" class="card-item">
-      <mat-card>
+<div class="mcontainer" fxLayout="row">
 
-        <mat-card-header class="card-header">{{screw.name}}</mat-card-header>
-        <img src="{{screw.imgPath}}" width="200" height="100">
-        <mat-card-content class = "card-content">
-          {{screw.category}}
-          {{screw.headType}}
-          <P>{{screw.gauge}} X {{screw.threadsPerInch}}  ({{screw.shaftLen}} in.)</P>
-        </mat-card-content>
+  <app-search-box class="box2" ></app-search-box>
 
-        <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
-          <button color = "primary" mat-raised-button>Find out More</button>
-          <button color = "primary" mat-raised-button>Add to Cart</button>
-        </mat-card-actions>
-      </mat-card>
+  <div fxLayout="row wrap" fxFlex="flex-start">
+
+    <div *ngFor="let screw of screwList"  class="card-item">
+
+      <app-screw-card [cardScrew]="screw"></app-screw-card>
+
     </div>
  <!--   <div class="box"><span>test3</span></div>
     <div class="box"><span>test4</span></div>
@@ -67,26 +58,3 @@
 
 </div>-->
 
-<!--<table border="1">
-  <thead></thead>
-  <tr>
-    <th>ID</th>
-    <th>Type</th>
-  </tr>
-
-  <tbody>
-  <tr *ngFor="let screw of screwList">
-    <td>{{screw.id}}</td>
-    <td>{{screw.name}}</td>
-    <td>
-      <button headType="button" value="Delete">Delete</button>
-    </td>
-  </tr>
-  </tbody>
-
-</table>-->
-<!--
-<div>
-  <button headType="button" (click)="rtToAddScrew()" value="Add Screw">Add Screw</button>
-</div>
--->

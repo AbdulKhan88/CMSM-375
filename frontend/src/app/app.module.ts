@@ -22,6 +22,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import { OwlModule } from 'ngx-owl-carousel';
 import { FooterComponent } from "./footer/footer.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
     HomepageComponent,
     NavbarComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule,
