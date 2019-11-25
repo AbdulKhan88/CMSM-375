@@ -1,0 +1,46 @@
+body {
+    background-image: url("../../assets/img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: 0%;
+    display: flex;
+    background-position-y: 0%;
+  }
+header {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 5%;
+    height: 50%;
+    width: 75%;
+    background-color: rgba(245, 245, 220, 0.692);
+}
+
+.container {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    width: 600px;
+    height: 400px;
+    background: rgba(0, 0, 0, .5);
+    margin: auto;
+    margin-top: 20px;
+    
+}
+
+.button-link {
+    border-radius: 5px;
+    background-color: rgba(245, 222, 179, 0.7);
+    color: black;
+    padding: 2px 6px;
+    font-size: 30px;
+    text-emphasis-style: bold;
+    cursor: pointer;
+    position: sticky;
+    margin: 01%;
+  }
+  .btn {
+      height: 1%;
+      width: 300px;
+  }

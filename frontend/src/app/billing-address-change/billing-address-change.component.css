@@ -1,0 +1,49 @@
+body {
+    background-image: url("../../assets/img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: 0%;
+    display: flex;
+    background-position-y: 0%;
+  }
+  header {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 5%;
+    height: auto;
+    width: 75%;
+    background-color: rgba(245, 245, 220, 0.692);
+}
+  .container {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    width: 600px;
+    height: auto;
+    background: rgba(0, 0, 0, .5);
+    margin: auto;
+    margin-top: 20px;
+    
+}
+.form{
+  margin: auto;
+  width: 75%;
+  background-color: rgba(245, 222, 179, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+}
+.field {
+  font-size: 20px;
+  height: 15px;
+}
+.text {
+  text-align: center;
+  padding-bottom: 20px;
+  
+}
+.btn{
+  background-color: rgba(245, 245, 220, 0.692);
+}

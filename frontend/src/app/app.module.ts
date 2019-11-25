@@ -30,6 +30,10 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { FooterComponent } from "./footer/footer.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import { SearchBoxComponent } from './search-box/search-box.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { BillingAddressChangeComponent } from './billing-address-change/billing-address-change.component';
+import { EmailChangeComponent } from './email-change/email-change.component';
+import { PasswordChangeComponent } from './password-change/password-change.component';
 import { ScrewDetailsComponent } from './screw-details/screw-details.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import {LayoutModule} from "./layout/layout.module";
@@ -51,6 +55,11 @@ import { ScrewLayoutComponent } from './screw-layout/screw-layout.component';
     ScrewDetailsComponent,
     ScrewLayoutComponent,
 
+    SearchBoxComponent,
+    AccountSettingsComponent,
+    BillingAddressChangeComponent,
+    EmailChangeComponent,
+    PasswordChangeComponent
   ],
   imports: [
     BrowserModule,
