@@ -1,9 +1,13 @@
 package edu.ben.labs.lab4.lab4;
 
+import edu.ben.labs.lab4.lab4.controller.Controller;
 import edu.ben.labs.lab4.lab4.model.Screw;
+import edu.ben.labs.lab4.lab4.model.User;
 import edu.ben.labs.lab4.lab4.repository.ScrewRepository;
 import edu.ben.labs.lab4.lab4.repository.ScrewRepositoryImpl;
 import edu.ben.labs.lab4.lab4.service.ScrewService;
+import edu.ben.labs.lab4.lab4.service.ScrewServiceImpl;
+import edu.ben.labs.lab4.lab4.service.UserService;
 import org.flywaydb.core.Flyway;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.flywaydb.core.Flyway;
 
+import java.util.Iterator;
 import java.util.List;
 
 @SpringBootApplication
@@ -31,12 +36,44 @@ public class Lab4Application {
 
     @Bean
     // Bc this is a CommandLineRunner it will run after Spring runs
-    public CommandLineRunner demo() {
+    public CommandLineRunner demo(Controller controller) {
         return (args) -> {
+
+//            User user = new User();
+//            user.setEmail("smndam777ster@gmail.com");
+//            user.setPassword("898989");
+//            user.setFirstName("rr");
+//            user.setLastName("ff");
+//            user.setUsername("fgfgfgfgfg");
+//            log.info(controller.registerUser(user).toString());
+
+//            List<User> users = userService.getAllUsers();
+//
+//            Iterator iterator = users.iterator();
+//
+//            while(iterator.hasNext()) {
+//
+//                User user = (User) iterator.next();
+//                log.info(user.getUsername());
+//
+//
+//
+//            }
+
+
+
+            //String returnString = "";
+
+            //if (output) returnString = "true";
+
+            //else returnString = "false";
+
+            //log.info(returnString);
+
             // This runs every time this class is made so it will add the same object over and over
             // i made this to test if i can create from backend
             // Add a object to DB
-            // Adds screw list into DB after spring is run
+            // Adds screw list into DB after spring is
 
             /*Flyway flyway = Flyway.configure().dataSource(URL, USER, PASS).load();
             flyway.repair();
@@ -54,7 +91,7 @@ public class Lab4Application {
             // for (Customer bauer : repository.findByLastName("Bauer")) {
             // 	log.info(bauer.toString());
             // }*/
-            log.info("");
+            //log.info("");
         };
     }
 }

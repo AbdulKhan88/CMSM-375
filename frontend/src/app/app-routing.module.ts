@@ -8,6 +8,7 @@ import {HomepageComponent} from "./homepage/homepage.component";
 import {RegisterComponent} from "./register/register.component";
 import {ScrewDetailsComponent} from "./screw-details/screw-details.component";
 import {ScrewLayoutComponent} from "./screw-layout/screw-layout.component";
+import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 import {AccountSettingsComponent} from "./account-settings/account-settings.component";
 import {PasswordChangeComponent} from "./password-change/password-change.component";
 import {EmailChangeComponent} from "./email-change/email-change.component";
@@ -15,12 +16,15 @@ import {BillingAddressChangeComponent} from "./billing-address-change/billing-ad
 
 const routes: Routes = [
   {path: 'screws', component: ScrewLayoutComponent},
+  {path: "", component: HomepageComponent},
+  {path: 'screws', component: ScrewListComponent},
   {path: 'login', component: LoginComponent},
   {path: 'homepage', component: HomepageComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'addScrew', component: AddScrewComponent},
   {path: 'screws/:screwId', component: ScrewDetailsComponent},
 
+  {path: 'shoppingCart', component: ShoppingCartComponent},
   {path: 'account-settings', component: AccountSettingsComponent},
   {path: 'email-change' , component: EmailChangeComponent},
   {path: 'password-change' , component: PasswordChangeComponent},

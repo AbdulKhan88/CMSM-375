@@ -17,7 +17,7 @@ import {
   MatSidenavModule
 } from "@angular/material";
 import {ScrewCardComponent} from "./screw-list/screw-card.component";
-import {FlexLayoutModule } from '@angular/flex-layout';
+import {FlexLayoutModule} from '@angular/flex-layout';
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {HomepageComponent} from "./homepage/homepage.component";
@@ -26,9 +26,10 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { OwlModule } from 'ngx-owl-carousel';
-import { FooterComponent } from "./footer/footer.component";
+import {OwlModule} from 'ngx-owl-carousel';
+import {FooterComponent} from "./footer/footer.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { BillingAddressChangeComponent } from './billing-address-change/billing-address-change.component';
@@ -37,6 +38,7 @@ import { PasswordChangeComponent } from './password-change/password-change.compo
 import { ScrewDetailsComponent } from './screw-details/screw-details.component';
 
 import { ScrewLayoutComponent } from './screw-layout/screw-layout.component';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { ScrewLayoutComponent } from './screw-layout/screw-layout.component';
     ScrewLayoutComponent,
 
     SearchBoxComponent,
+    ShoppingCartComponent,
     AccountSettingsComponent,
     BillingAddressChangeComponent,
     EmailChangeComponent,
