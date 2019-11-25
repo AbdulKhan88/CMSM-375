@@ -35,8 +35,7 @@ import { BillingAddressChangeComponent } from './billing-address-change/billing-
 import { EmailChangeComponent } from './email-change/email-change.component';
 import { PasswordChangeComponent } from './password-change/password-change.component';
 import { ScrewDetailsComponent } from './screw-details/screw-details.component';
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
-import {LayoutModule} from "./layout/layout.module";
+
 import { ScrewLayoutComponent } from './screw-layout/screw-layout.component';
 
 @NgModule({
@@ -79,7 +78,6 @@ import { ScrewLayoutComponent } from './screw-layout/screw-layout.component';
     MatCheckboxModule,
     MatGridListModule,
     MatSidenavModule,
-    LayoutModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
