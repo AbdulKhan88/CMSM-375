@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-search-box',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBoxComponent implements OnInit {
 
+  deckMate = false;
+  gripRite = false;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  toggle(event){
+    console.log(event);
+    console.log(this.deckMate);
+  }
+
 
 }

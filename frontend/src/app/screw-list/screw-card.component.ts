@@ -8,7 +8,8 @@ import {Component, Input} from "@angular/core";
 })
 export class ScrewCardComponent {
 
-  @Input() cardScrew:Screw;
+  @Input() cardScrew: Screw;
+  @Input() screwId: string;
 
   constructor() {
 
@@ -17,6 +18,7 @@ export class ScrewCardComponent {
   addProductToCart() {
 
   }
+
   openDialog() {
 
   }

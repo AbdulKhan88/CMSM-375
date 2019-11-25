@@ -1,3 +1,4 @@
+<!--
 <mat-card >
   <mat-card-header class="card-header">{{cardScrew.name}}</mat-card-header>
   <img src="{{cardScrew.imgPath}}" width="200" height="100">
@@ -11,6 +12,32 @@
   <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
     <button color = "accent" mat-raised-button>Find out More</button>
     <button color = "accent" mat-raised-button>Add to Cart</button>
+  </mat-card-actions>
+
+</mat-card>
+-->
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-title class="md-card-title">
+      <a [title]="cardScrew.name + ' details'" [routerLink]="['/screws', screwId]">
+        {{ cardScrew.name }}
+      </a>
+      </mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image [src]="cardScrew.imgPath" class="crop">
+  <mat-card-content>
+
+    <div class="card-text-content">
+      {{cardScrew.category}}
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+    <button mat-button >Find Out More</button>
+    <button mat-button >Add to Cart</button>
+
   </mat-card-actions>
 
 </mat-card>

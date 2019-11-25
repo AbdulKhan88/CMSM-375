@@ -1,25 +1,7 @@
-/*
-.box2{
-  height: 80%;
-  width:140%;
-  border: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2em;
-  background-color: aliceblue;
-  margin-right: auto;
-  align-self: flex-end;
-}*/
-.searchContain {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
+:host {
+  background: beige;
+  padding: 30px
 }
-
 .searchBox1 {
-  height: 150px;
-  background-color: beige;
-  width: 120px;
+  height: 200px;
 }

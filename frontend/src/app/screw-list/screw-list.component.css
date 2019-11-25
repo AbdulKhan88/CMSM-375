@@ -1,14 +1,5 @@
-.card-deck-container {
-  width: 100%;
-  max-width: 1400px;
-  position: relative;
-  border-radius: 2px;
-  padding: 10px 10px 30px;
- /* margin: 0px 10px 10px -1px;*/
-  margin-right: auto;
-  background-color: #f5f5f5;
-  justify-content: space-between;
-}
+
+
 .mcontainer {
   justify-content: center;
   display: flex;
@@ -36,11 +27,15 @@
   align-items: center;
   font-size: 1.2em;
 }
-
-.card-item {
-  padding-left: 20px;
-  margin: 10px;
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
 }
+
 
 .card-search {
   width: 200px;
@@ -55,14 +50,88 @@
   align-items: center;
   justify-content: left;
 }
+.tile {
 
+  background: #ffe8bb;
+}
 .box2{
+ top: 0;
   height: 80%;
   width: 10%;
   display: flex;
   justify-content: flex-end;
-
   font-size: 1.2em;
   background-color: wheat;
-  align-self: flex-start;
+}
+
+.card {
+  padding: 22px 10px 10px 10px;
+  background: #ffe8b9;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contain {
+  /* for row
+   main axis ------
+   cross ax  | */
+  margin-left: 330px;
+  display: flex;
+  background: #fff;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  height: 100%;
+  justify-content: flex-start;  /* impacts main axis */
+ /* align-items: center; !* cross axis *!*/
+}
+.filter {
+  display: flex;
+  height: 500px;
+  width: 300px;
+  flex-wrap: wrap;
+  flex-flow: row;
+  margin-top: 10px;
+  justify-content: flex-start;
+  flex: 0 0 150px;  /* grow-shrink-basis */
+  background: #f0d19a;
+}
+.boxs{
+  height: 200px;
+  padding: 20px;
+  margin: 20px;
+  flex: 0 1 100px;  /* grow-shrink-basis */
+}
+.boxs2{
+  height: 200px;
+  flex: 0 1 150px;  /* grow-shrink-basis */
+}
+.one {
+  background: red;
+
+}
+
+.two {
+  background: black;
+}
+
+.three {
+  background: beige;
+}
+
+.four {
+  background: blue;
+}
+
+.five {
+  background: blueviolet;
+}
+
+.six {
+  background: #fafaee;
 }

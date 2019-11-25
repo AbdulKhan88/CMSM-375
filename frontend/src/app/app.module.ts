@@ -8,7 +8,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpService} from "./shared/http.service";
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule} from "@angular/material";
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatGridListModule,
+  MatGridTile,
+  MatSidenavModule
+} from "@angular/material";
 import {ScrewCardComponent} from "./screw-list/screw-card.component";
 import {FlexLayoutModule } from '@angular/flex-layout';
 import {LoginComponent} from "./login/login.component";
@@ -23,6 +30,10 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { FooterComponent } from "./footer/footer.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import { SearchBoxComponent } from './search-box/search-box.component';
+import { ScrewDetailsComponent } from './screw-details/screw-details.component';
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import {LayoutModule} from "./layout/layout.module";
+import { ScrewLayoutComponent } from './screw-layout/screw-layout.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +47,10 @@ import { SearchBoxComponent } from './search-box/search-box.component';
     NavbarComponent,
     FooterComponent,
     PageNotFoundComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    ScrewDetailsComponent,
+    ScrewLayoutComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -52,7 +66,11 @@ import { SearchBoxComponent } from './search-box/search-box.component';
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    OwlModule
+    OwlModule,
+    MatCheckboxModule,
+    MatGridListModule,
+    MatSidenavModule,
+    LayoutModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

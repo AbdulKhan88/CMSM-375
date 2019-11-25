@@ -1,0 +1,85 @@
+<!--
+<app-navbar></app-navbar>
+-->
+
+<!--
+<div class="wrap">
+
+  <div fxLayout="column" fxFlex.md="70" fxLayoutAlign="space-around stretch"
+       class="card-deck-container mat-elevation-z4">
+
+    <div *ngIf="screw$ | async as screw" class="card-item">
+      <div>
+        <mat-card>
+
+          <mat-card-header>
+
+            <mat-card-title class="md-card-title">
+
+              {{ screw.name }}
+
+            </mat-card-title>
+
+          </mat-card-header>
+
+          <img [src]="screw.imgPath">
+          <mat-card-content>
+            <div class="card-text-content">
+              {{screw.headType}}
+              <br>
+              {{screw.category}}
+              <br>
+              {{screw.price}}
+            </div>
+          </mat-card-content>
+
+          <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+
+            <button mat-button>Add to Cart</button>
+
+          </mat-card-actions>
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+<app-navbar fxLayout="column"></app-navbar>
+
+<div class="wrap">
+  <div fxLayout="row" fxFlex="100">
+    <div class="content" fxLayout="column" fxFlex>
+
+      <div *ngIf="screw$ | async as screw" class="card-item">
+
+        <div class="matContent">
+          <mat-card>
+
+            <mat-card-header>
+              <mat-card-title class="md-card-title">
+               <p>{{ screw.name }}  {{screw.gauge}} X {{screw.threadsPerInch}} {{screw.shaftLen}} in</p>
+              </mat-card-title>
+            </mat-card-header>
+
+            <img mat-card-image [src]="screw.imgPath">
+
+            <mat-card-content class="matCardContent">
+                {{screw.headType}}
+                {{screw.category}}
+                {{screw.price}}
+            </mat-card-content>
+
+            <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+
+              <button mat-button>Add to Cart</button>
+
+            </mat-card-actions>
+
+          </mat-card>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

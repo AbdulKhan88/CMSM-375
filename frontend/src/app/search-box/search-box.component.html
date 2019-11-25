@@ -1,8 +1,9 @@
-<div class="searchContain">
-  <mat-card class = "searchBox1">
-    <p>filter by brand</p>
-  </mat-card>
-  <mat-card class = "searchBox1">
-    <p>filter by size</p>
-  </mat-card>
-</div>
+<mat-card class = "searchBox1">
+  <section class="example-section">
+    <mat-checkbox class="example-margin"  (click)="toggle($event)">Deck Mate</mat-checkbox>
+    <mat-checkbox class="example-margin"  (click)="toggle($event)">Grip-Rite</mat-checkbox>
+  </section>
+</mat-card>
+<mat-card class = "searchBox1">
+  <p>filter by size</p>
+</mat-card>

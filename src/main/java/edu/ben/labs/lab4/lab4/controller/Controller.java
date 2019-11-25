@@ -29,4 +29,12 @@ public class Controller {
         screwService.saveOrUpdate(screw);
         return screw;
     }
+
+    @GetMapping("/screws/{id}")
+    public Screw getScrewById(@PathVariable long id) {
+        System.out.println("Screw Id:" + id);
+        Screw temp = screwService.getScrewById(id);
+        return temp;
+    }
+
 }

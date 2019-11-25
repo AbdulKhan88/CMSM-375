@@ -40,6 +40,15 @@ export class HttpService {
     );
   }
 
+  getScrewByID(screwId: number) {
+    const ID_API = `${this.SCREWS_API}/${screwId}`; // API to get a screw by id
+    console.log(screwId);
+    return this.http.get<Screw>(ID_API)
+      .pipe(
+        catchError(this.handleError<Screw>('getScrewById'))
+      );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.
@@ -49,9 +58,6 @@ export class HttpService {
   private handleError<T>(operation = 'operation', result?: T) {
     // This is from tour of hero, with some changes
     return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-
       console.error(error); // log to console instead
       // Let the app keep running by returning an empty result.
       return of(result as T);
