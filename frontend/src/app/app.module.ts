@@ -22,8 +22,13 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {OwlModule} from 'ngx-owl-carousel';
 import {FooterComponent} from "./footer/footer.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
-import {SearchBoxComponent} from './search-box/search-box.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
+import { SearchBoxComponent } from './search-box/search-box.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { BillingAddressChangeComponent } from './billing-address-change/billing-address-change.component';
+import { EmailChangeComponent } from './email-change/email-change.component';
+import { PasswordChangeComponent } from './password-change/password-change.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +43,11 @@ import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
     FooterComponent,
     PageNotFoundComponent,
     SearchBoxComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    AccountSettingsComponent,
+    BillingAddressChangeComponent,
+    EmailChangeComponent,
+    PasswordChangeComponent
   ],
   imports: [
     BrowserModule,
