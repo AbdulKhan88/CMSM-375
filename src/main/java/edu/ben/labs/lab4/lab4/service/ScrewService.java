@@ -4,14 +4,16 @@ import edu.ben.labs.lab4.lab4.model.Screw;
 
 import java.util.List;
 
+
 public interface ScrewService {
-    public List<Screw> getAllScrews();
 
-    public Screw getScrewById(long id);
+    List<Screw> getAllScrews();
 
-    public void saveOrUpdate(Screw screw);
+    Screw getScrewById(long id);
 
-    public Screw deleteScrew(Screw screw);
+    void saveOrUpdate(Screw screw);
 
-    public void addScrewList();
+    Screw deleteScrew(Screw screw);
+
+    void addScrewList();
 }

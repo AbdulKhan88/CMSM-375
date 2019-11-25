@@ -23,13 +23,15 @@ export class UsernameValidator {
 
     const value = control.value;
 
-    // do not call server when input is empty or shorter than 2 characters
-    if (!value || value.length < 2) {
+    // do not call server when input is empty
+    if (!value) {
       return Promise.resolve(null);
     }
 
+    // otherwise call the server with a new promise
     return new Promise((resolve, reject) => {
-      this.timeout = setTimeout(() => {
+
+        // call our springboot environment with the url
         this.http.get<boolean>(`${environment.serverURL}/checkUsername?value=${control.value}`)
           .subscribe(flag => {
               if (flag) {
@@ -42,8 +44,7 @@ export class UsernameValidator {
               console.log(err);
             }
           );
-      }, 200);
-    });
+      });
   }
 
 }

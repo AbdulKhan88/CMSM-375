@@ -9,7 +9,7 @@
   <br>
   <br>
   <!-- call our form register -->
-  <form [formGroup]="registerForm">
+  <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
 
     <!--form part for first name -->
     <div class="form-group">
@@ -18,6 +18,9 @@
           <input matInput type="text" formControlName="firstName" placeholder="first name" required>
         </label>
       </mat-form-field>
+      <div class="error-message" *ngIf="formHasError('firstName', 'required')">
+        <label>First name is required</label>
+      </div>
     </div>
 
     <!--form part for last name-->
@@ -27,6 +30,9 @@
           <input matInput type="text" formControlName="lastName" placeholder="last name" required>
         </label>
       </mat-form-field>
+      <div class="error-message" *ngIf="formHasError('lastName', 'required')">
+        <label>Last name is required</label>
+      </div>
     </div>
 
     <!--form part for user name-->
@@ -36,8 +42,13 @@
           <input matInput type="text" formControlName="userName" placeholder="user name" required>
         </label>
       </mat-form-field>
+      <div class="error-message" *ngIf="formHasError('userName', 'required')">
+        <label>username is required</label>
+      </div>
+      <div class="error-message" *ngIf="formHasError('userName', 'usernameTaken')">
+        <label>username is already taken</label>
+      </div>
     </div>
-
 
     <!--form part for email-->
     <div class="form-group">
@@ -46,24 +57,36 @@
           <input matInput type="email" formControlName="email" placeholder="email" required>
         </label>
       </mat-form-field>
+      <div class="error-message" *ngIf="formHasError('email', 'required')">
+        <label>Email is not valid</label>
+      </div>
+      <div class="error-message" *ngIf="formHasError('email', 'pattern')">
+        <label>Email is not valid</label>
+     </div>
+      <div class="error-message" *ngIf="formHasError('email', 'emailTaken')">
+        <label>email is already taken</label>
+    </div>
     </div>
 
     <!--form part for password-->
     <div class="form-group">
       <mat-form-field floatLabel = "never" class="example-full-width" hideRequiredMarker>
         <label>
-        <input matInput type="password" formControlName="password" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+        <input matInput type="password" formControlName="password" placeholder="Enter your password" required [type]="hide ? 'password' : 'text'">
         </label>
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide"> <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
+      <div class="error-message" *ngIf="formHasError('password', 'required')">
+        <label>password is required</label>
+      </div>
     </div>
 
     <!-- buttons to route to home or register user-->
-    <button mat-raised-button type="submit">Register</button>
+    <button mat-raised-button type="submit" [disabled]="!registerForm.valid">Register</button>
     <div class="divider"></div>
-    <button mat-raised-button type = "cancel" routerLink="/home">Cancel</button>
+    <button mat-raised-button type = "cancel" routerLink="/homepage">Cancel</button>
     </form>
     <br>
   </div>

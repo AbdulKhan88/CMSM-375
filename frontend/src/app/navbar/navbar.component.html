@@ -6,11 +6,16 @@
       <span class="example-spacer"></span>
 
       <a mat-raised-button routerLink="/screws" class="ProductsButton">Products</a>
-      <a mat-raised-button routerLink="/login" class="ProductsButton">login</a>
-      <a mat-raised-button routerLink="/register" class="ProductsButton">register</a>
+      <a *ngIf="!loginService.isUserLoggedIn()" mat-raised-button routerLink="/login" class="ProductsButton">login</a>
+      <a *ngIf="!loginService.isUserLoggedIn()" mat-raised-button routerLink="/register" class="ProductsButton">register</a>
+      <a *ngIf="loginService.isUserLoggedIn()" mat-raised-button routerLink="/homepage" class="ProductsButton" (click)="loginService.logOut()">Logout</a>
+      <a mat-raised-button routerLink="/shoppingCart" class="ShoppingCartButton">
+        <mat-icon>shopping_cart</mat-icon>
+      </a>
+    <label *ngIf = "loginService.isUserLoggedIn()">Welcome, {{userName}}</label>
     </mat-toolbar>
-    
-    
+
+
     <!--<mat-sidenav-container class="sidenav-container">-->
     <!--  <mat-sidenav #drawer class="sidenav" fixedInViewport-->
     <!--      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"-->

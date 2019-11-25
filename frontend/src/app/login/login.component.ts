@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {HttpService} from "../shared/http.service";
+import {User} from "../shared/user";
+import {Router} from "@angular/router";
+import {environment} from "../register/username-validator";
+import {HttpClient} from '@angular/common/http';
+import {AuthenticationService} from "../shared/authentication.service";
 
 @Component({
   selector: 'app-login',
@@ -8,27 +14,62 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  // use formgroup to build our angular form to take in user input
-  // in this case we are getting a login form
+  // user object we will be passing
+  user : User = new User();
+
+  users : User[];
+
   loginForm: FormGroup;
 
-  // this will display our error message
-  errorMessage: string = '';
-
-  constructor(private fb: FormBuilder) {
+  constructor(private loginService:AuthenticationService, private readonly http: HttpClient, private fb: FormBuilder, private httpService: HttpService, private router : Router) {
     this.createForm();
   }
 
-  // this method creates our login form
   public createForm() {
+    this.loginForm = this.fb.group({
 
-    // call the formbuilder to create the login form. In this case our form takes in email and password.
-    this.loginForm = this.fb.group({email: ['', Validators.required ], password: ['',Validators.required]
+      email: ['', Validators.required ],
+      password: ['',Validators.required]
     });
   }
 
-
+  // this method runs on init
+  // it gets the list from services
   ngOnInit() {
+    this.httpService.getUsers().subscribe(response => this.handleSuccessfulResponse(response))
   }
+
+  // helper method for init
+  handleSuccessfulResponse(response) {
+    this.users = response;
+  }
+
+
+
+
+
+  // public loginUser(value) {
+  //
+  //   this.user.email = value.email;
+  //   this.user.password = value.password;
+  //
+  //   // otherwise call the server with a new promise
+  //   return new Promise((resolve, reject) => {
+  //
+  //     // call our springboot environment with the url
+  //     this.http.get<boolean>(`${environment.serverURL}/checkUsername?value=${value.user}`)
+  //       .subscribe(flag => {
+  //           if (flag) {
+  //             resolve({'usernameTaken': true});
+  //           } else {
+  //             resolve(null);
+  //           }
+  //         },
+  //         (err) => {
+  //           console.log(err);
+  //         }
+  //       );
+  //   });
+
 
 }

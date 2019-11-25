@@ -9,7 +9,7 @@
     <br>
     <br>
     <!-- call our form register -->
-    <form [formGroup]="loginForm">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
 
       <!--form part for email-->
       <div class="form-group">
@@ -30,12 +30,33 @@
       </div>
 
       <!-- buttons to route to home or register user-->
-      <button mat-raised-button type="submit">Register</button>
+      <button mat-raised-button type="submit" [disabled]="!loginForm.valid">Login</button>
       <div class="divider"></div>
-      <button mat-raised-button type = "cancel" routerLink="/home">Cancel</button>
+      <button mat-raised-button type = "cancel" routerLink="/homepage">Cancel</button>
     </form>
-    <br>
-    <!-- this will log the error message to the user based on their input-->
-    <label class="error">{{errorMessage}}</label>
   </div>
+
+
+
 </div>
+
+
+
+
+
+<!--    <div *ngFor="let user of users">-->
+      <p>{{userT.email}} 999</p>
+      <br>
+      <p>{{userT.firstName}}</p>
+      <br>
+      <p>{{userT.lastName}}</p>
+      <br>
+      <p>{{userT.username}}</p>
+      <br>
+      <p>{{userT.password}}</p>
+<!--    </div>-->
+
+
+    <!-- this will log the error message to the user based on their input
+    <label class="error">{{errorMessage}}</label>
+    -->

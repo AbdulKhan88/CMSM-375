@@ -38,34 +38,7 @@ public class ScrewRepositoryTest {
         assert (temp.canRead());
     }
 
-    @Test
-    /**
-     * A Test to see if object are made correctly
-     */
-    public void testCreateFromFile() {
-        ScrewRepositoryImpl screwRepoImpl = new ScrewRepositoryImpl();
-        List<Screw> expected = new ArrayList<>();
-        try {
-            Scanner fileIn = new Scanner(temp);
-            String temp;
-            String[] tempArr;
-            Screw s1;
-            fileIn.nextLine(); // skip header line
-            while (fileIn.hasNextLine()) {
-                temp = fileIn.nextLine();
-                tempArr = temp.split(",");
 
-                s1 = new Screw(tempArr[0], tempArr[1], tempArr[2], tempArr[3], tempArr[4], Double.valueOf(tempArr[5]), tempArr[6]);
 
-                expected.add(s1);
-            }
-
-            fileIn.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        List<Screw> actual = screwRepoImpl.createScrews(CREATE_SCREW_FILE_PATH);
-        Assert.assertEquals(actual.toArray().length, expected.toArray().length);
-    }
 
 }

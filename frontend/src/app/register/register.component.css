@@ -20,3 +20,7 @@ h1 {
   text-align: center;
   position: center;
 }
+
+.error-message {
+  color:red;
+}

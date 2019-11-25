@@ -3,10 +3,14 @@ package edu.ben.labs.lab4.lab4.service;
 import edu.ben.labs.lab4.lab4.model.User;
 import java.util.List;
 
-public interface IUserervice {
+public interface IUserService {
 
-    // step 3
+    List<User> getAllUsers();
 
-    public List<User> findAll();
+    User findByUsername(String username);
+
+    User findByEmail(String email);
+
+    void registerUserToDB(User user);
 
 }
