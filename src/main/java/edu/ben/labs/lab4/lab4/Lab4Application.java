@@ -38,15 +38,18 @@ public class Lab4Application {
     // Bc this is a CommandLineRunner it will run after Spring runs
     public CommandLineRunner demo(Controller controller) {
         return (args) -> {
+            String email = "smndam777ster@gmail.com";
+            String password = "898989";
 
-//            User user = new User();
-//            user.setEmail("smndam777ster@gmail.com");
-//            user.setPassword("898989");
-//            user.setFirstName("rr");
-//            user.setLastName("ff");
-//            user.setUsername("fgfgfgfgfg");
-//            log.info(controller.registerUser(user).toString());
+            User user = new User();
+            user.setEmail(email);
+            user.setPassword(password);
+            user.setUsername("fgfgfgfgfg");
+            User returnUser = controller.loginUser(user);
+            log.info(returnUser.toString());
 
+            //log.info(controller.registerUser(user).toString());
+//
 //            List<User> users = userService.getAllUsers();
 //
 //            Iterator iterator = users.iterator();
@@ -59,8 +62,6 @@ public class Lab4Application {
 //
 //
 //            }
-
-
 
             //String returnString = "";
 

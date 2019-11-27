@@ -1,51 +1,16 @@
 package edu.ben.labs.lab4.lab4.service;
 
 import edu.ben.labs.lab4.lab4.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
-import edu.ben.labs.lab4.lab4.repository.UserRepository;
 
-@Service
-@Transactional
-public class UserService implements IUserService {
+public interface UserService {
 
-    @Autowired
-    UserRepository userRepository;
+    List<User> getAllUsers();
 
-    @Override
-    public List<User> getAllUsers() {
-        return (List<User>) userRepository.findAll();
-    }
+    User findByUsername(String username);
 
-    @Override
-    public void registerUserToDB(User user) {
-        userRepository.save(user);
-    }
+    User findByEmail(String email);
 
-    @Override
-    public User findByUsername(String userName) {
-        return userRepository.findByUsername(userName);
-    }
-
-    @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
+    void registerUserToDB(User user);
 
 }
-
-
-// user the bcrypt encoder to encode the password
-//user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-
-
-//    public void saveUser(User user) {
-//        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-//        userRepository.save(user);
-//    }
-
-
-

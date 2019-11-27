@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from "../shared/authentication.service";
 
 @Component({
@@ -8,11 +8,20 @@ import {AuthenticationService} from "../shared/authentication.service";
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private loginService:AuthenticationService) { }
+  currentUser: any;
 
-  userName = sessionStorage.getItem('username');
+  constructor(private loginService: AuthenticationService) {
+    this.loginService.currentUser.subscribe(x => this.currentUser = x);
+  }
+
+  //userName = sessionStorage.getItem('username');
 
   ngOnInit() {
+    //this.loginService.currentUser.subscribe(x => this.currentUser = x);
+  }
+
+  logout() {
+    this.loginService.logOut();
   }
 
 }

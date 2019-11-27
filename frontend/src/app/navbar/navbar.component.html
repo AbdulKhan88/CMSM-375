@@ -1,45 +1,45 @@
 <mat-toolbar color="primary">
-    <!--  todo need link for the home-->
-      <a mat-raised-button routerLink="/homepage" class="HomeButton">
-        <mat-icon>home</mat-icon>
-      </a>
-      <span class="example-spacer"></span>
+  <!--  todo need link for the home-->
+  <a mat-raised-button routerLink="/homepage" class="HomeButton">
+    <mat-icon>home</mat-icon>
+  </a>
+  <span class="example-spacer"></span>
 
-      <a mat-raised-button routerLink="/screws" class="ProductsButton">Products</a>
-      <a *ngIf="!loginService.isUserLoggedIn()" mat-raised-button routerLink="/login" class="ProductsButton">login</a>
-      <a *ngIf="!loginService.isUserLoggedIn()" mat-raised-button routerLink="/register" class="ProductsButton">register</a>
-      <a *ngIf="loginService.isUserLoggedIn()" mat-raised-button routerLink="/homepage" class="ProductsButton" (click)="loginService.logOut()">Logout</a>
-      <a mat-raised-button routerLink="/shoppingCart" class="ShoppingCartButton">
-        <mat-icon>shopping_cart</mat-icon>
-      </a>
-    <label *ngIf = "loginService.isUserLoggedIn()">Welcome, {{userName}}</label>
-    </mat-toolbar>
+  <a mat-raised-button routerLink="/screws" class="ProductsButton">Products</a>
+  <a *ngIf="!currentUser" mat-raised-button routerLink="/login" class="ProductsButton">login</a>
+  <a *ngIf="!currentUser" mat-raised-button routerLink="/register" class="ProductsButton">register</a>
+  <a *ngIf="currentUser" mat-raised-button routerLink="/homepage" class="ProductsButton" (click)="logout()">Logout</a>
+  <a mat-raised-button routerLink="/shoppingCart" class="ShoppingCartButton">
+    <mat-icon>shopping_cart</mat-icon>
+  </a>
+  <label *ngIf="currentUser">Welcome, {{currentUser.username}}</label>
+</mat-toolbar>
 
 
-    <!--<mat-sidenav-container class="sidenav-container">-->
-    <!--  <mat-sidenav #drawer class="sidenav" fixedInViewport-->
-    <!--      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"-->
-    <!--      [mode]="(isHandset$ | async) ? 'over' : 'side'"-->
-    <!--      [opened]="(isHandset$ | async) === false">-->
-    <!--    <mat-toolbar>Menu</mat-toolbar>-->
-    <!--    <mat-nav-list>-->
-    <!--      <a mat-list-item href="#">Link 1</a>-->
-    <!--      <a mat-list-item href="#">Link 2</a>-->
-    <!--      <a mat-list-item href="#">Link 3</a>-->
-    <!--    </mat-nav-list>-->
-    <!--  </mat-sidenav>-->
-    <!--  <mat-sidenav-content>-->
-    <!--    <mat-toolbar color="primary">-->
-    <!--      <button-->
-    <!--        type="button"-->
-    <!--        aria-label="Toggle sidenav"-->
-    <!--        mat-icon-button-->
-    <!--        (click)="drawer.toggle()"-->
-    <!--        *ngIf="isHandset$ | async">-->
-    <!--        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>-->
-    <!--      </button>-->
-    <!--      <span>CalendarBoyz</span>-->
-    <!--    </mat-toolbar>-->
-    <!--    &lt;!&ndash; Add Content Here &ndash;&gt;-->
-    <!--  </mat-sidenav-content>-->
-    <!--</mat-sidenav-container>-->
+<!--<mat-sidenav-container class="sidenav-container">-->
+<!--  <mat-sidenav #drawer class="sidenav" fixedInViewport-->
+<!--      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"-->
+<!--      [mode]="(isHandset$ | async) ? 'over' : 'side'"-->
+<!--      [opened]="(isHandset$ | async) === false">-->
+<!--    <mat-toolbar>Menu</mat-toolbar>-->
+<!--    <mat-nav-list>-->
+<!--      <a mat-list-item href="#">Link 1</a>-->
+<!--      <a mat-list-item href="#">Link 2</a>-->
+<!--      <a mat-list-item href="#">Link 3</a>-->
+<!--    </mat-nav-list>-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content>-->
+<!--    <mat-toolbar color="primary">-->
+<!--      <button-->
+<!--        type="button"-->
+<!--        aria-label="Toggle sidenav"-->
+<!--        mat-icon-button-->
+<!--        (click)="drawer.toggle()"-->
+<!--        *ngIf="isHandset$ | async">-->
+<!--        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>-->
+<!--      </button>-->
+<!--      <span>CalendarBoyz</span>-->
+<!--    </mat-toolbar>-->
+<!--    &lt;!&ndash; Add Content Here &ndash;&gt;-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->

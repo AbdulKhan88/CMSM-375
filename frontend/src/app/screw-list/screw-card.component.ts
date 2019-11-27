@@ -16,10 +16,12 @@ export class ScrewCardComponent {
   }
 
   addProductToCart() {
-
+    // maybe use a cart service to push screw object to cart
+    // and have it update at the same time
   }
 
   openDialog() {
 
   }
+
 }
