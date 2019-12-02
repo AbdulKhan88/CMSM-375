@@ -30,16 +30,13 @@ export class AuthenticationService {
     let model: any = {};
     model.email = userName;
     model.password = password;
-    console.log('Auth:' + model.email);
 
     // this is making the post call to sever not service
     return this.http.post<User>(this.LOGIN2_API, model)
       .pipe(map(user => {
-        console.log(user.email);
         if (user != null) { // this check may need to be removed
           // Spring will return a user object based from the email
           localStorage.setItem('currentUser', JSON.stringify(user));
-          console.log(JSON.stringify(user));
           this.currentUserSubject.next(user);
         } else {
           alert("Invaild");
