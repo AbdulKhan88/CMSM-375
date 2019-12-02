@@ -111,23 +111,4 @@ export class HttpService {
 
 
 }
-//
-// // this method checks the DB to see if the user is logged in
-// getUser() {
-//   return this.http.get<User[]>(this.USER_API)
-//     .pipe(
-//       catchError(this.handleError<User[]>('getUser', []))
-//     );
-// }
 
-// public checkEmail(user : User): Observable<boolean> {
-//
-//   return this.http.post<boolean>("http://localhost:8080/checkEmail", user);
-// }
-
-// public checkUsername(user: User) {
-//   return this.http.get<Boolean>(this.USER_API)
-//     .pipe(
-//     catchError(this.handleError<User[]>('getUser', []))
-//   );
-// }

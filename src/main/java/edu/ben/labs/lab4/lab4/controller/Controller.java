@@ -57,6 +57,7 @@ public class Controller {
     @RequestMapping("/login")
     public User login(@RequestBody User user) {
         // return user.getUsername().equals(userName) && user.getPassword().equals(password);
+        System.out.println(user.getEmail());
         return userService.findByEmail(user.getEmail());
     }
 

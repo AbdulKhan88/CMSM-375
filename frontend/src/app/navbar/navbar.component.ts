@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private loginService: AuthenticationService) {
     this.loginService.currentUser.subscribe(x => this.currentUser = x);
+
   }
 
   //userName = sessionStorage.getItem('username');
