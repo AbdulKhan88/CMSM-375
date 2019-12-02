@@ -1,9 +1,12 @@
 <mat-card class = "searchBox1">
+
   <section class="example-section">
-    <mat-checkbox class="example-margin"  (click)="toggle($event)">Deck Mate</mat-checkbox>
-    <mat-checkbox class="example-margin"  (click)="toggle($event)">Grip-Rite</mat-checkbox>
+   <!-- <mat-checkbox class="example-margin"  (click)="toggle($event)">Deck Mate</mat-checkbox>
+    <mat-checkbox class="example-margin"  (click)="toggle($event)">Grip-Rite</mat-checkbox>-->
+    <filters (sendFilter)="optionReceived($event)"></filters>
   </section>
 </mat-card>
+
 <mat-card class = "searchBox1">
   <p>filter by size</p>
 </mat-card>

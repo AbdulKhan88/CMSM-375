@@ -11,4 +11,10 @@ export class Screw {
   shaftLen: string;
   content: string;
   imgPath: string;
+
+
+
+  toString(): string {
+    return this.name + this.headType + this.price + this.category + this.gauge + this.threadsPerInch + this.shaftLen + this.content + this.imgPath;
+  }
 }

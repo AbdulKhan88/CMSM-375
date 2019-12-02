@@ -13,6 +13,7 @@ import {AccountSettingsComponent} from "./account-settings/account-settings.comp
 import {PasswordChangeComponent} from "./password-change/password-change.component";
 import {EmailChangeComponent} from "./email-change/email-change.component";
 import {BillingAddressChangeComponent} from "./billing-address-change/billing-address-change.component";
+import {FAppComponent} from "./filter/filter-app.component";
 
 const routes: Routes = [
   {path: 'screws', component: ScrewLayoutComponent},
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'addScrew', component: AddScrewComponent},
   {path: 'screws/:screwId', component: ScrewDetailsComponent},
-
+  {path: 'filter', component: FAppComponent},
   {path: 'shoppingCart', component: ShoppingCartComponent},
   {path: 'account-settings', component: AccountSettingsComponent},
   {path: 'email-change' , component: EmailChangeComponent},

@@ -1,0 +1,4 @@
+<mat-checkbox *ngFor="let option of categoryFilters"
+             [(ngModel)]="option.value" (click)="optionClicked(option)">
+  {{option.group}}
+</mat-checkbox>

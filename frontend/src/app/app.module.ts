@@ -41,7 +41,10 @@ import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 import { LoaderComponent } from './loader/loader.component';
 import {LoaderService} from "./shared/loader.service";
 import {LoaderInterceptor} from "./interceptors/loader-interceptor";
-
+import { ReviewComponent } from './review/review.component';
+import { ReviewListComponent } from './review-list/review-list.component';
+import { FilterComponent } from './filter/filter.component';
+import { FAppComponent } from './filter/filter-app.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +66,11 @@ import {LoaderInterceptor} from "./interceptors/loader-interceptor";
     BillingAddressChangeComponent,
     EmailChangeComponent,
     PasswordChangeComponent,
-    LoaderComponent
+    LoaderComponent,
+    ReviewComponent,
+    ReviewListComponent,
+    FilterComponent,
+    FAppComponent
   ],
   imports: [
     BrowserModule,

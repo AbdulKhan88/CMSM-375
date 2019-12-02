@@ -48,7 +48,9 @@
 <app-navbar fxLayout="column"></app-navbar>
 
 <div class="wrap">
+
   <div fxLayout="row" fxFlex="100">
+
     <div class="content" fxLayout="column" fxFlex>
 
       <div *ngIf="screw$ | async as screw" class="card-item">
@@ -79,7 +81,8 @@
           </mat-card>
         </div>
       </div>
-
+      <app-review-list></app-review-list>
     </div>
   </div>
+
 </div>
