@@ -1,3 +1,4 @@
+/*
 package edu.ben.labs.lab4.lab4.model;
 
 import javax.persistence.*;
@@ -61,3 +62,4 @@ public class Review {
                 '}';
     }
 }
+*/

@@ -30,7 +30,6 @@ public class Controller {
     @PostMapping("/screws")
     public Screw addScrew(@RequestBody Screw screw) {
         // ID should be made in back end by DB
-        System.out.println("Inside addScrew POST");
         Screw temp = new Screw();
         temp.setName(screw.getName());
         screwService.saveOrUpdate(screw);
@@ -57,7 +56,6 @@ public class Controller {
     @RequestMapping("/login")
     public User login(@RequestBody User user) {
         // return user.getUsername().equals(userName) && user.getPassword().equals(password);
-        System.out.println(user.getEmail());
         return userService.findByEmail(user.getEmail());
     }
 

@@ -1,3 +1,4 @@
+/*
 package edu.ben.labs.lab4.lab4.service;
 
 import edu.ben.labs.lab4.lab4.model.Review;
@@ -10,3 +11,4 @@ public interface ReviewService {
 
     Boolean addReviewToProduct();
 }
+*/
