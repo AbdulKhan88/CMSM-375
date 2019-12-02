@@ -1,5 +1,6 @@
 package edu.ben.labs.lab4.lab4.service;
 
+import edu.ben.labs.lab4.lab4.Encoding.MyEncoder;
 import edu.ben.labs.lab4.lab4.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void registerUserToDB(User user) {
+
+        // hash user password with b crypt
+        MyEncoder encoder = new MyEncoder();
+        user.setPassword(encoder.encodePassword(user.getPassword()));
+
         userRepository.save(user);
     }
 
