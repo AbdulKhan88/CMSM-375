@@ -1,4 +1,3 @@
-/*
 package edu.ben.labs.lab4.lab4.model;
 
 import javax.persistence.*;
@@ -10,7 +9,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long reviewId;
 
-    private String author;
+    private String userEmail;
 
     private long screwId;
 
@@ -28,12 +27,12 @@ public class Review {
         this.reviewId = reviewId;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setUserEmail(String author) {
+        this.userEmail = author;
     }
 
     public long getScrewId() {
@@ -56,10 +55,9 @@ public class Review {
     public String toString() {
         return "Review{" +
                 "reviewId=" + reviewId +
-                ", author='" + author + '\'' +
+                ", userEmail='" + userEmail + '\'' +
                 ", screwId=" + screwId +
                 ", content='" + content + '\'' +
                 '}';
     }
 }
-*/

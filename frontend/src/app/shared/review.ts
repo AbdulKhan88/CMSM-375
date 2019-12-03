@@ -1,11 +1,14 @@
 export class Review {
+  public reviewId: string;
+  public screwId: string;
+  public content: string;
+  public userEmail: string;
 
-  public content:string;
-  public author:string;
-
-  constructor(content:string, author:string) {
+  constructor(content: string, userEmail: string, screwId: string, review_id?: string) {
+    this.reviewId = review_id;
+    this.screwId = screwId;
     this.content = content;
-    this.author = author;
+    this.userEmail = userEmail;
   }
 
 }

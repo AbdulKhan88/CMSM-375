@@ -60,16 +60,16 @@
 
             <mat-card-header>
               <mat-card-title class="md-card-title">
-               <p>{{ screw.name }}  {{screw.gauge}} X {{screw.threadsPerInch}} {{screw.shaftLen}} in</p>
+                <p>{{ screw.name }} {{screw.gauge}} X {{screw.threadsPerInch}} {{screw.shaftLen}} in</p>
               </mat-card-title>
             </mat-card-header>
 
             <img mat-card-image [src]="screw.imgPath">
 
             <mat-card-content class="matCardContent">
-                {{screw.headType}}
-                {{screw.category}}
-                {{screw.price}}
+              {{screw.headType}}
+              {{screw.category}}
+              {{screw.price}}
             </mat-card-content>
 
             <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
@@ -80,9 +80,9 @@
 
           </mat-card>
         </div>
+          <app-review-list [screwID]="screw.id"
+                           ></app-review-list>
       </div>
-      <app-review-list></app-review-list>
     </div>
   </div>
-
 </div>

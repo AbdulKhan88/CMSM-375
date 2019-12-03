@@ -1,16 +1,23 @@
 package edu.ben.labs.lab4.lab4.controller;
 
+import edu.ben.labs.lab4.lab4.model.Review;
 import edu.ben.labs.lab4.lab4.model.Screw;
 import edu.ben.labs.lab4.lab4.model.User;
+import edu.ben.labs.lab4.lab4.repository.ReviewRepository;
+import edu.ben.labs.lab4.lab4.service.ReviewService;
 import edu.ben.labs.lab4.lab4.service.UserService;
 import edu.ben.labs.lab4.lab4.service.ScrewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.Base64;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 // Using "*" can fix the CORS issue but real shitty way to do so
 @CrossOrigin(origins = "http://localhost:4200") // allows this to talk to angular port (4200)
@@ -21,10 +28,31 @@ public class Controller {
     private ScrewService screwService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private ReviewService reviewService;
+    @Autowired
+    private ReviewRepository reviewRepository;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @RequestMapping("/screws") // Http requests will go to "screws"
     public List<Screw> screwListPage() {
         return screwService.getAllScrews();
+    }
+
+    @RequestMapping("/review")
+    public List<Review> getReviewForScrew(String screwId){
+        System.out.println(Long.parseLong(screwId));
+        reviewRepository.getReviewsForScrewID(Long.parseLong(screwId));
+
+        return reviewRepository.getReviewsForScrewID(Long.parseLong(screwId));
+    }
+    @PostMapping("/review")
+    public Review addReview(@RequestBody Review review) {
+        // ID should be made in back end by DB
+        System.out.println("in review post");
+        Review returnReview = reviewService.addReviewToProduct(String.valueOf(review.getScrewId()), review.getUserEmail(), review.getContent());
+        return returnReview;
     }
 
     @PostMapping("/screws")

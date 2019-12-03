@@ -1,14 +1,13 @@
-/*
 package edu.ben.labs.lab4.lab4.service;
 
 import edu.ben.labs.lab4.lab4.model.Review;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 public interface ReviewService {
 
-    List<Review> getReviewsForScrew(String screwId);
+    List getReviewsForScrew(EntityManager entityManager, String screwId);
 
-    Boolean addReviewToProduct();
+    Review addReviewToProduct(String screwId, String userEmail, String content);
 }
-*/

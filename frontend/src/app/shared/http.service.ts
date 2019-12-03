@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {catchError, map, tap} from "rxjs/operators";
 import {Observable, of} from "rxjs";
 import {Screw} from "./screw";
 import {User} from "./user";
+import {Review} from "./review";
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,8 @@ export class HttpService {
 
   private LOGIN2_API = this.API + "/login";
 
+  private REVIEW_API = this.API + "/review";
+
   httpOptions = { // not 100% if this is need and what it does gotten from tour of hero
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
@@ -35,6 +38,24 @@ export class HttpService {
       .pipe(
         catchError(this.handleError<Screw[]>('getScrewList', []))
       );
+  }
+
+  getReviewForScrew(screwId: string) {
+    let params = new HttpParams().set('screwId', screwId);
+    return this.http.get<Review[]>(this.REVIEW_API, {headers: {'Content-Type': 'application/json'}, params: params})
+      .pipe(
+        catchError(this.handleError<Review[]>('getReviewForScrew', []))
+      );
+  }
+
+  addReview(temp:Review) {
+    console.log(JSON.stringify(temp));
+    return this.http.post<Review>(this.REVIEW_API, temp , this.httpOptions).pipe(
+      tap((review: Review) => {
+        return this.log(`added review w/ content=${review.content}`);
+      }),
+      catchError(this.handleError<Review>('addReview'))
+    );
   }
 
   getUsers(): Observable<User[]> {
@@ -74,7 +95,7 @@ export class HttpService {
   getScrewByID(screwId: number) {
     const ID_API = `${this.SCREWS_API}/${screwId}`; // API to get a screw by id
     return this.http.get<Screw>(ID_API)
-      .pipe(map(data=> data));
+      .pipe(map(data => data));
 
   }
 

@@ -25,7 +25,7 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .antMatchers("/login", "/screws", "/checkUsername", "/checkEmail", "/users", "/users/{email}", "/screws/{id}").permitAll()
+                .antMatchers("/login", "/screws", "/checkUsername", "/checkEmail", "/users", "/users/{email}", "/screws/{id}", "/review").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
