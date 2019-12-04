@@ -23,6 +23,8 @@ export class HttpService {
 
   private REVIEW_API = this.API + "/review";
 
+  private CHANGE_USER_API = this.API + "/usersChange";
+
   httpOptions = { // not 100% if this is need and what it does gotten from tour of hero
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
@@ -78,6 +80,9 @@ export class HttpService {
     return this.http.post<User>(this.USER_API, user);
   }
 
+  public updateUser(user: User): Observable<User> {
+    return this.http.post<User>(this.CHANGE_USER_API, user);
+  }
   public loginUser(user: User): Observable<User> {
     //call our springboot environment with the url
     return this.http.post<User>(this.LOGIN_API, user, this.httpOptions);

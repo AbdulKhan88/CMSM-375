@@ -54,6 +54,11 @@ export class AuthenticationService {
     localStorage.setItem('username', user.username);
   }
 
+  update(user: User) {
+    this.logOut();
+    this.login(user.email, user.password);
+  }
+
   logOut() { // Method to log out currentUser
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);

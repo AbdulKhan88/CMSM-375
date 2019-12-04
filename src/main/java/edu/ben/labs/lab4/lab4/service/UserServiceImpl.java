@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
+import java.util.Optional;
+
 import edu.ben.labs.lab4.lab4.repository.UserRepository;
 
 @Service
@@ -39,6 +41,12 @@ public class UserServiceImpl implements UserService {
     public User findByEmail(String email) {
 
         return userRepository.findByEmail(email);
+    }
+
+    @Override
+    public void saveOrUpdate(User user) {
+        // b/c PM are the same this will update a current user based off of PM
+        userRepository.save(user);
     }
 
 }

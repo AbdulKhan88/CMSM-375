@@ -1,24 +1,24 @@
-<app-navbar></app-navbar>
-    <body>
-        <div class="container">
-            <header>
-                <h1>CHANGE EMAIL</h1>
-                <h2>current email</h2>
-            </header>
-            <div class="form">
-                <div class="form-group">
-                        <mat-form-field floatLabel = "never"  class="field" hideRequiredMarker>
-                          <label>
-                            <input matInput class="text" type="text" formControlName="new-email" placeholder="Enter New Email" required>
-                          </label>
-                        </mat-form-field>
-                </div>
-                
+  <div *ngIf="currentUser">
+    <header>
+      <h1>CHANGE EMAIL</h1>
+      <h2>{{currentUser.email}}</h2>
+    </header>
+    <div class="form">
+
+      <form [formGroup]="emailForm" (ngSubmit)="changeEmail(emailForm.value)">
+
+        <div class="form-group">
+
+          <mat-form-field floatLabel="never" class="field" hideRequiredMarker>
+
+            <label>
+              <input matInput class="text" formControlName="email" type="text" placeholder="Enter New Email" required>
+            </label>
+
+          </mat-form-field>
+
         </div>
         <button mat-raised-button class="btn" type="submit">Submit</button>
-      </div>
-      
-    </body>
-
-
-<app-footer></app-footer>
+      </form>
+    </div>
+  </div>

@@ -1,24 +1,54 @@
 <app-navbar></app-navbar>
 
 <body>
-        <div class="container">
-                <div class = "pageLayout">
-                        <header>
-                        <h1>Account Settings</h1>
-                        <h2>USERNAME HERE</h2>
-                        </header>
-                        <br>
-                        <br>
-                        <a class= "button-link"><button routerLink="/email-change"  type="submit" class="btn">Change Email</button></a>
-                        <a class= "button-link"><button routerLink="/password-change" type="submit" class="btn">Change Password</button></a>
-                        <a class= "button-link"><button routerLink="/billing-address-change" type="submit" class="btn">Change Billing Info</button></a>  
-        
-        
-                       
-                    
-                </div>
-        
-        </div>
+<div class="container">
+
+  <div class="pageLayout">
+
+    <div *ngIf="currentUser; else elseBlock">
+
+      <div *ngIf="emailChange; else pass">
+        <app-email-change (updatedUser)="changeUserInfo($event)"></app-email-change>
+      </div>
+
+      <div *ngIf="passwordChange; else buttonBlock">
+        <ng-container #pass>
+        <app-password-change (updatedUser)="changeUserInfo($event)"></app-password-change>
+        </ng-container>
+      </div>
+      <div *ngIf="!passwordChange && !emailChange">
+
+        <header>
+          <h1>Account Settings</h1>
+          <h2>{{currentUser.username}}</h2>
+        </header>
+
+        <br>
+        <br>
+
+        <a class="button-link">
+          <button type="submit" class="btn" (click)="emailChanger()">Change Email</button>
+        </a>
+        <a class="button-link">
+          <button  type="submit" class="btn" (click)="passWordChanger()">Change Password</button>
+        </a>
+        <a class="button-link">
+          <button routerLink="/billing-address-change" type="submit" class="btn">Change Billing Info</button>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <ng-template #elseBlock>
+    <header>
+      <h1>You Have to Be Logged In To Use this Page!</h1>
+    </header>
+  </ng-template>
+
+</div>
+
 </body>
 
 <app-footer></app-footer>

@@ -47,6 +47,7 @@ public class Controller {
 
         return reviewRepository.getReviewsForScrewID(Long.parseLong(screwId));
     }
+
     @PostMapping("/review")
     public Review addReview(@RequestBody Review review) {
         // ID should be made in back end by DB
@@ -81,6 +82,19 @@ public class Controller {
         return user;
     }
 
+    @PostMapping("/usersChange")
+    public User updateUserInfo(@RequestBody User user) {
+        User temp = new User();
+        temp.setId(user.getId());
+        temp.setEmail(user.getEmail());
+        temp.setFirstName(user.getFirstName());
+        temp.setLastName(user.getFirstName());
+        temp.setUsername(user.getUsername());
+        temp.setPassword(user.getPassword());
+
+        userService.saveOrUpdate(temp);
+        return user;
+    }
     @RequestMapping("/login")
     public User login(@RequestBody User user) {
         // return user.getUsername().equals(userName) && user.getPassword().equals(password);
